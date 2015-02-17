@@ -101,6 +101,10 @@ function BleuTradeClient(key, secret, requeue) {
 		api_query('getmarketsummaries', callback);
 	};
 
+	self.getmarketsummary = function(market, callback) {
+		api_query('getmarketsummaries', callback, {market: market});
+	};
+
 	self.getorderbook = function(market, type, depth, callback) {
 		api_query('getorderbook', callback, {market: market, type: type, depth: depth});
 	};
