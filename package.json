@@ -1,6 +1,6 @@
 {
 	"name": "bleutrade-api",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"description": "NodeJS Client Library for the BleuTrade Exchange (BleuTrade.com) API",
 	"keywords": [
 		"btc",

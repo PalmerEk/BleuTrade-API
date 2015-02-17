@@ -1,7 +1,7 @@
 var stringify     = require("querystring").stringify,
 	hmac          = require("crypto").createHmac,
 	request       = require("request"),
-	publicMethods = ['getmarkets', 'getcurrencies', 'getticker', 'getmarketsummaries', 'getorderbook', 'getmarkethistory'];
+	publicMethods = ['getmarkets', 'getcurrencies', 'getticker', 'getmarketsummary', 'getmarketsummaries', 'getorderbook', 'getmarkethistory'];
 
 function BleuTradeClient(key, secret, requeue) {
 	var self    = this;
