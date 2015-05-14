@@ -170,6 +170,18 @@ function BleuTradeClient(key, secret, requeue) {
 	self.getorderhistory = function(orderid, callback) {
 		api_query('account/getorderhistory', callback, { orderid: orderid });
 	};
+
+	self.getdeposithistory = function(callback) {
+		api_query('account/getdeposithistory', callback);
+	};
+
+	self.getwithdrawhistory = function(callback) {
+		api_query('account/getwithdrawhistory', callback);
+	};
+
+	self.chatsend = function(channel, text, callback) {
+		api_query('account/chatsend', callback, {channel: channel, text: text});
+	};
 }
 
 module.exports = BleuTradeClient;
