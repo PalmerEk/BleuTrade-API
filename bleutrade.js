@@ -1,8 +1,9 @@
 var stringify     = require("querystring").stringify,
 	hmac          = require("crypto").createHmac,
-	EventEmitter 	= require('events').EventEmitter,
-	io 						= require('socket.io-client')('wss://nodejs1.bleutrade.com:8080'),
+	EventEmitter  = require('events').EventEmitter,
+	io 			  = require('socket.io-client')('wss://nodejs1.bleutrade.com:8080'),
 	request       = require("request"),
+	util 	      = require("util"),
 	publicMethods = ['getmarkets', 'getcurrencies', 'getticker', 'getmarketsummary', 'getmarketsummaries', 'getorderbook', 'getmarkethistory'];
 
 function BleuTradeClient(key, secret, requeue) {
@@ -190,7 +191,7 @@ function BleuTradeClient(key, secret, requeue) {
 	// Push API
 	////////////////////////////////////////////////////////////////////////
 	self.subscribe = function() {
-		io.bind('message', self.handlePushEvents);
+		io.on('message', self.handlePushEvents.bind(this));
 	};
 
 	self.handlePushEvents = function(data) {
