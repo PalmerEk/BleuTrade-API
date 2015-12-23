@@ -1,7 +1,7 @@
 var stringify     = require("querystring").stringify,
 	hmac          = require("crypto").createHmac,
 	EventEmitter  = require('events').EventEmitter,
-	io 			  = require('socket.io-client')('wss://nodejs1.bleutrade.com:8080'),
+	io 			  = require('socket.io-client')('https://api.bleutrade.com:8083', {secure: true}),
 	request       = require("request"),
 	util 	      = require("util"),
 	publicMethods = ['getmarkets', 'getcurrencies', 'getticker', 'getmarketsummary', 'getmarketsummaries', 'getorderbook', 'getmarkethistory'];
